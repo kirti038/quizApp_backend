@@ -8,10 +8,15 @@ dotenv.config(); // Load environment variables
 
 const app = express();
 const PORT = process.env.PORT || 8080;
+app.use(cors({
+  origin: "*", // Allow all origins (or specify frontend URL)
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 
 // Middleware
 app.use(express.json()); // Parse JSON bodies
-app.use(cors()); // Enable CORS for all routes
+
 
 // Routes
 app.use("/api", router);
