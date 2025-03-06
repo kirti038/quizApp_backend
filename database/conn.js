@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 export default async function connect() {
   try {
-    const uri = process.env.ATLAS_URI;
+    const uri = mongodb+srv://quiz_123:quiz123@quiz.zz76k.mongodb.net/?retryWrites=true&w=majority&appName=Quiz;
     if (!uri) {
       throw new Error("MongoDB connection URI is missing in environment variables.");
     }
